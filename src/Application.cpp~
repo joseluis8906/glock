@@ -5,7 +5,7 @@
 #include "Integer.h"
 
 int main () {
-    Glock::Integer i = 1000000;
+    Glock::Integer i = 999000000000000000;
     Glock::Console::PrintLn(i);
     /*Glock::String str = "Hola {name}";
     Glock::Scanner scanner;
