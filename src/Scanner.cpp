@@ -12,5 +12,11 @@ Glock::String Glock::Scanner::NextLine () {
 Glock::Integer Glock::Scanner::NextInt () {
     std::string s;
     std::getline(std::cin, s);
-    return (Glock::Integer) std::atoll(s.c_str());
+    return std::stoll(s);
+}
+
+Glock::Decimal Glock::Scanner::NextDecimal () {
+    std::string s;
+    std::getline(std::cin, s);
+    return std::stold(s);
 }

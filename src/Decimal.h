@@ -8,6 +8,7 @@ namespace Glock {
     class Decimal {
         private:
             long double value;
+            int precision;
         public:            
             Decimal ();
             Decimal (int);
@@ -15,7 +16,9 @@ namespace Glock {
             Decimal (long long int);
             Decimal (float);
             Decimal (double);
-            String ToString() const;
+            Decimal (long double);
+            void SetPrecision (int);
+            String ToString () const;
     };
 }
 
