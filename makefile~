@@ -6,11 +6,10 @@ OBJ = obj
 
 all: jarvis
 
-jarvis: Application.o Integer.o Decimal.o String.o Scanner.o Console.o
+jarvis: Application.o Scanner.o String.o Integer.o Console.o
 	$(CC) \
 	$(OBJ)/Application.o \
 	$(OBJ)/Integer.o \
-	$(OBJ)/Decimal.o \
 	$(OBJ)/String.o \
 	$(OBJ)/Scanner.o \
 	$(OBJ)/Console.o \
@@ -21,9 +20,6 @@ Application.o: $(SOURCE)/Application.cpp
 
 Integer.o: $(SOURCE)/Integer.cpp
 	$(CC) $(CFLAGS) $(SOURCE)/Integer.cpp -o $(OBJ)/Integer.o
-
-Decimal.o: $(SOURCE)/Decimal.cpp
-	$(CC) $(CFLAGS) $(SOURCE)/Decimal.cpp -o $(OBJ)/Decimal.o
 	
 String.o: $(SOURCE)/String.cpp
 	$(CC) $(CFLAGS) $(SOURCE)/String.cpp -o $(OBJ)/String.o

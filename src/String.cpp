@@ -24,9 +24,11 @@ bool Glock::String::operator== (const String &other) const {
     return true;
 }
     	
-void Glock::String::Replace (const String &target, const String &source) {
+Glock::String Glock::String::Replace (const String &target, const String &source) {
     size_t pos = find(target);
-    replace(pos, target.size(), source);
+    String tmp = data();
+    tmp.replace(pos, target.size(), source);
+    return tmp;
 }
         
 bool Glock::String::EndsWith (String const &target) {
@@ -43,5 +45,9 @@ bool Glock::String::StartsWith (String const &target) {
     } else {
 		return false;
     }
+}
+
+Glock::String Glock::String::ToString () const {
+    return *this;
 }
 

@@ -16,10 +16,16 @@ namespace Glock {
             template <class InputIterator>
     	    String( InputIterator first, InputIterator last );
             
-            bool operator== (const String &other) const;
-            void Replace (const String &target, const String &source);
+
+            template <class T>
+            String operator + (const T& target) { return data() + target.ToString(); }            
+            bool operator == (const String &other) const;
+            String Replace (const String &target, const String &source);
             bool EndsWith (String const &target);
             bool StartsWith (String const &target);
+
+            
+            String ToString () const;
     };
 }
 
