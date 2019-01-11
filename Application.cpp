@@ -1,11 +1,6 @@
-#include <iostream>
-#include "String.h"
-#include "Scanner.h"
-#include "Console.h"
-#include "Integer.h"
-#include "Decimal.h"
+#include "Glock/Glock.h"
 
-int main () {    
+int main (int args, char** argv) {    
     Glock::Console::Print(Glock::String("Escribe tu nombre: "));
     Glock::String name = Glock::Scanner::NextLine();
     Glock::Console::PrintLn (Glock::String("Hola {name}").Replace("{name}", name));
