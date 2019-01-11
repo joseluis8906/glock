@@ -17,5 +17,5 @@ int main () {
     Glock::Console::Print(Glock::String("Escribe un decimal: "));
     Glock::Decimal d = Glock::Scanner::NextDecimal();
     d.SetPrecision(10);
-    Glock::Console::Print(d);
+    Glock::Console::PrintLn(d);
 }

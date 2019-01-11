@@ -1,0 +1,1 @@
+add_library(Glock SHARED Console.cpp Decimal.cpp Integer.cpp Scanner.cpp String.cpp)

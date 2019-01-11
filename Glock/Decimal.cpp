@@ -25,4 +25,3 @@ Glock::String Glock::Decimal::ToString () const {
 void Glock::Decimal::SetPrecision (int precision) {
     this->precision = precision + 1;
 }
-
