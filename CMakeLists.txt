@@ -1,22 +1,13 @@
 cmake_minimum_required(VERSION 2.6)
-project(GlockTest)
+project(Glock)
 
-set(GlockTest_VERSION_MAJOR 1)
-set(GlockTest_VERSION_MINOR 0)
+set(CMAKE_BUILD_TYPE Release)
+set(INSTALL_LIB_DIR "/home/joseluis/.local/lib")
+set(INSTALL_HEADER_DIR "/home/joseluis/.local/include/Glock")
 
-configure_file(
-    "${PROJECT_SOURCE_DIR}/GlockTestConfig.h.in"
-    "${PROJECT_BINARY_DIR}/GlockTestConfig.h"
-)
+include_directories(include)
+file(GLOB SOURCES "src/*.cpp")
 
-include_directories("${PROJECT_BINARY_DIR}")
-
-option(USE_GLOCK "Use glock library" ON)
-if(USE_GLOCK) 
-    include_directories("${PROJECT_SOURCE_DIR}/Glock")
-    add_subdirectory (Glock)
-    set(EXTRA_LIBS ${EXTRA_LIBS} Glock)
-endif(USE_GLOCK)
-
-add_executable(GlockTest Application.cpp)
-target_link_libraries(GlockTest ${EXTRA_LIBS})
+add_library(Glock SHARED ${SOURCES})
+install(TARGETS Glock DESTINATION ${INSTALL_LIB_DIR})
+install(DIRECTORY "${PROJECT_SOURCE_DIR}/include/" DESTINATION ${INSTALL_HEADER_DIR})
